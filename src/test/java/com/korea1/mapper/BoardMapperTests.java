@@ -29,9 +29,9 @@ public class BoardMapperTests {
 	}
 	
 	@Test
-	public void insertTest() {
-		BoardVO vo = new BoardVO(0, "titletest", "contenttest", "writertest", null, null);
-		mapper.insertSelectKey(vo);
+	public void insertSelectKey() {
+		BoardVO vo = new BoardVO(0, "abc", "d", "e", null, null);
+		mapper.insert(vo);
 	}
 	@Test
 	public void readTest() {
@@ -40,16 +40,18 @@ public class BoardMapperTests {
 	}
 	@Test
 	public void DeleteTest() {
-		mapper.delete(110);
-		log.info(mapper.delete(110));
+		mapper.delete(5);
+		log.info(mapper.delete(5));
 	}
 	@Test
 	public void UpdateTest() {
-		
+		BoardVO vo = new BoardVO(1, "titletest", "contenttest", "writertest", null, null);
+		mapper.update(vo);
 	}
 	@Test
 	public void getTotalCountTest() {
-		
+		mapper.getTotalCount(1);
+		log.info(mapper.getTotalCount(1));
 	}
 }
 
