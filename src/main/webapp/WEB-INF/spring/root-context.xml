@@ -13,8 +13,8 @@
 		
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<context:component-scan base-package="com.korea1.domain" />		 
-	<context:component-scan base-package="com.korea1.mapper" />		 
+<!-- 	<context:component-scan base-package="com.korea1.domain" />		  -->
+<!-- 	<context:component-scan base-package="com.korea1.mapper" />		  -->
 	
 	<!-- DataSource -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
@@ -23,19 +23,6 @@
 		<property name="username" value="root"></property>
 		<property name="password" value="1234"></property>
 	</bean>
-	
-	<!-- AOP -->
-	<aop:aspectj-autoproxy />
-	
-
-	
-	
-	<!-- Transaction -->
-	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-	<tx:annotation-driven/>
-	
 
 	<!-- Mybatis  -->
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

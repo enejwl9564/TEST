@@ -30,22 +30,22 @@ public class BoardMapperTests {
 	
 	@Test
 	public void insertSelectKey() {
-		BoardVO vo = new BoardVO(0, "abc", "d", "e", null, null);
+		BoardVO vo = new BoardVO(0, "제목", "내용", "작성자1", null, null);
 		mapper.insert(vo);
 	}
 	@Test
 	public void readTest() {
-		mapper.read(110);
-		log.info(mapper.read(110));
+		mapper.read(4);
+		log.info(mapper.read(4));
 	}
 	@Test
 	public void DeleteTest() {
-		mapper.delete(5);
-		log.info(mapper.delete(5));
+		mapper.delete(2);
+		log.info(mapper.delete(2));
 	}
 	@Test
 	public void UpdateTest() {
-		BoardVO vo = new BoardVO(1, "titletest", "contenttest", "writertest", null, null);
+		BoardVO vo = new BoardVO(4, "titletest", "contenttest", "writertest", null, null);
 		mapper.update(vo);
 	}
 	@Test
