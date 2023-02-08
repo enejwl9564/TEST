@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
-		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
-		
-	<!-- Root Context: defines shared resources visible to all other web components -->
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<!-- DataSource -->
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<!-- DataSource -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/shopdb?useUnicode=true"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/testdb?useUnicode=true"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="1234"></property>
 	</bean>
-
-	<!-- Mybatis  -->
+		
+		
+		
+	<!-- MYBATIS -->
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" />	
 	</bean>
@@ -29,9 +25,5 @@
 		<property  name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<mybatis-spring:scan base-package="com.korea1.mapper" />
-	 
-	
+	<mybatis-spring:scan base-package="com.test.mapper" />	
 </beans>
-
-
